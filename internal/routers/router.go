@@ -1,8 +1,8 @@
 package routers
 
 import (
+	"gin-demo/internal/handlers"
 	"gin-demo/internal/middleware"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,7 +10,5 @@ import (
 func InitRouter(g *gin.Engine) {
 	g.Use(middleware.Tracing())
 
-	g.GET("/ping", func(c *gin.Context) {
-		c.String(http.StatusOK, "ok")
-	})
+	g.GET("/ping", handlers.Ping)
 }
