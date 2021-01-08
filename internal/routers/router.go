@@ -8,7 +8,8 @@ import (
 )
 
 func InitRouter(g *gin.Engine) {
+	g.Use(middleware.Recovery())
+	g.Use(middleware.AccessLog())
 	g.Use(middleware.Tracing())
-
 	g.GET("/ping", handlers.Ping)
 }

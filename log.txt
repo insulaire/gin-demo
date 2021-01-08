@@ -1,0 +1,1 @@
+2021/01/08 14:44:01 {"callers":["/Users/chen/Documents/project/golang/gin-demo/global/logger.go: 27 gin-demo/global.init.0"],"level":"info","message":"access log: method: GET, status_code: 200, begin_time: 1610088241, end_time: 1610088241","request":"","response":"","span_id":"2f2bc67a63ea17cd","time":1610088241604737000,"trace_id":"2f2bc67a63ea17cd"}

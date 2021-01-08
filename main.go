@@ -2,7 +2,7 @@ package main
 
 import (
 	_ "gin-demo/global"
-	"gin-demo/pkg/routers"
+	"gin-demo/internal/routers"
 
 	"github.com/gin-gonic/gin"
 )
