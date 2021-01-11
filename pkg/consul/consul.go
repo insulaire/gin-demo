@@ -1,6 +1,7 @@
 package consul
 
 import (
+	"fmt"
 	"gin-demo/global"
 	"log"
 
@@ -21,8 +22,8 @@ func Registra() {
 	registration.Tags = nil
 	registration.Address = global.ServiceSetting.Host
 	registration.Check = &consulapi.AgentServiceCheck{
-		//HTTP:                           fmt.Sprintf("HTTP://%s:%d%s", registration.Address, registration.Port, "/ping"),
-		HTTP:                           "https://www.baidu.com/",
+		HTTP: fmt.Sprintf("HTTP://%s:%d%s", registration.Address, registration.Port, "/ping"),
+		//HTTP:                           "https://www.baidu.com/",
 		Timeout:                        "1s",
 		Interval:                       "1s",
 		DeregisterCriticalServiceAfter: "10s",
