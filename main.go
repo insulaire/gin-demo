@@ -1,8 +1,10 @@
 package main
 
 import (
-	_ "gin-demo/global"
+	"fmt"
+	"gin-demo/global"
 	"gin-demo/internal/routers"
+	"gin-demo/pkg/consul"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,5 +12,6 @@ import (
 func main() {
 	g := gin.Default()
 	routers.InitRouter(g)
-	g.Run(":9999")
+	consul.Registra()
+	g.Run(fmt.Sprintf("%s:%d", global.ServiceSetting.Host, global.ServiceSetting.Port))
 }
